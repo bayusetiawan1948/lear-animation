@@ -14,7 +14,7 @@ export default function Dashboard() {
           Lab Eksperimen Animasi
         </h1>
         <p className="text-zinc-400 text-lg max-w-2xl leading-relaxed">
-          Kumpulan hasil praktik animasi web, transisi CSS, dan efek interaktif. 
+          Kumpulan hasil praktik animasi web, transisi CSS, dan efek interaktif.
           Pilih salah satu kartu di bawah ini untuk melihat detailnya.
         </p>
       </header>
@@ -40,7 +40,7 @@ export default function Dashboard() {
                   </span>
                 ))}
               </div>
-              <h2 className="text-xl font-bold text-zinc-100 mb-2 group-hover:text-indigo-300 transition-colors duration-300">
+              <h2 className="text-xl font-bold text-zinc-100 mb-2 group-hover:text-indigo-300 transition-colors duration-300 truncate">
                 {exp.title}
               </h2>
               <p className="text-sm text-zinc-500 leading-relaxed line-clamp-3">
@@ -53,7 +53,10 @@ export default function Dashboard() {
                 Lihat Eksperimen
               </span>
               <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center group-hover:bg-indigo-500 transition-colors duration-300">
-                <ArrowRight weight="bold" className="text-zinc-400 group-hover:text-white transition-colors duration-300 group-hover:-rotate-45" />
+                <ArrowRight
+                  weight="bold"
+                  className="text-zinc-400 group-hover:text-white transition-colors duration-300 group-hover:-rotate-45"
+                />
               </div>
             </div>
           </Link>

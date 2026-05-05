@@ -3,6 +3,8 @@ import Dashboard from './pages/Dashboard';
 import ExperimentLayout from './layouts/ExperimentLayout';
 import CssTransitionsExp from './pages/experiments/CssTransitionsExp';
 import MagneticCardExp from './pages/experiments/MagneticCardExp';
+import { TiltCardExp } from './pages/experiments/TiltCardExp';
+import MagneticButtonExp from './pages/experiments/MagneticButtonExp';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: 'magnetic-card',
         element: <MagneticCardExp />,
+      },
+      {
+        path: 'tilt-card',
+        element: <TiltCardExp />,
+      },
+      {
+        path: 'magnetic-button',
+        element: <MagneticButtonExp />,
       },
     ],
   },
