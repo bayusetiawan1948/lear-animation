@@ -39,4 +39,12 @@ export const experiments: Experiment[] = [
     path: '/experiments/magnetic-button',
     tags: ['Hover Effect', 'Topik-2'],
   },
+  {
+    id: 'card-list-staggered',
+    title: 'Card List Staggered Animation',
+    description:
+      'Efek tombol interaktif dengan transisi halus pada skala dan rotasi.',
+    path: '/experiments/card-list-staggered',
+    tags: ['Hover Effect', 'Topik-3'],
+  },
 ];

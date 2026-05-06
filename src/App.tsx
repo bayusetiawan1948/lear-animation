@@ -5,6 +5,7 @@ import CssTransitionsExp from './pages/experiments/CssTransitionsExp';
 import MagneticCardExp from './pages/experiments/MagneticCardExp';
 import { TiltCardExp } from './pages/experiments/TiltCardExp';
 import MagneticButtonExp from './pages/experiments/MagneticButtonExp';
+import CardListStaggeredExp from './pages/experiments/CardListStaggeredExp';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'magnetic-button',
         element: <MagneticButtonExp />,
+      },
+      {
+        path: 'card-list-staggered',
+        element: <CardListStaggeredExp />,
       },
     ],
   },

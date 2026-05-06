@@ -1,1 +1,70 @@
 @import 'tailwindcss';
+
+@layer utilities {
+  .parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .card-wrapper {
+    display: grid;
+    width: 320px;
+    height: 80px;
+  }
+
+  .child {
+    background-color: #c72434; /* Merah */
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px; /* rounded-xl */
+    animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(1000ms + var(--index) * 80ms);
+  }
+
+  .skeleton {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1s ease-in-out forwards;
+  }
+
+  .skeleton,
+  .child {
+    grid-area: 1 / 1;
+  }
+
+  @keyframes fadeSlideUp {
+    0% {
+      transform: translateY(24px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+      opacity: 0;
+    }
+  }
+
+  /* @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  } */
+}
