@@ -1,10 +1,12 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { ArrowLeft } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowsClockwise } from '@phosphor-icons/react';
 import { experiments } from '../data/experiments';
+import { useState } from 'react';
 
 export default function ExperimentLayout() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [resetKey, setResetKey] = useState(0);
 
   const currentExperiment = experiments.find((exp) => exp.path === location.pathname);
 
@@ -34,10 +36,21 @@ export default function ExperimentLayout() {
             </div>
           </div>
         )}
+
+        <div className="ml-auto">
+          <button
+            onClick={() => setResetKey(prev => prev + 1)}
+            className="group flex items-center gap-2 px-3 py-2 text-sm font-medium text-zinc-400 bg-zinc-900/50 hover:text-white hover:bg-zinc-800 rounded-lg transition-all duration-300"
+            title="Reset Component State"
+          >
+            <ArrowsClockwise weight="bold" className="transition-transform duration-300 group-active:rotate-180" />
+            Reset
+          </button>
+        </div>
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col">
+      <main key={resetKey} className="flex-1 flex flex-col">
         {/* We use flex-1 to allow the child component to fill the screen if needed */}
         <Outlet />
       </main>
