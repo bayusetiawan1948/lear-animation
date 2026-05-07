@@ -6,6 +6,8 @@ import MagneticCardExp from './pages/experiments/MagneticCardExp';
 import { TiltCardExp } from './pages/experiments/TiltCardExp';
 import MagneticButtonExp from './pages/experiments/MagneticButtonExp';
 import CardListStaggeredExp from './pages/experiments/CardListStaggeredExp';
+import EasingDemoExp from './pages/experiments/EasingDemoExp';
+import AnimatedButtonExp from './pages/experiments/AnimatedButtonEXp';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: 'card-list-staggered',
         element: <CardListStaggeredExp />,
+      },
+      {
+        path: 'easing-demo',
+        element: <EasingDemoExp />,
+      },
+      {
+        path: 'animated-button',
+        element: <AnimatedButtonExp />,
       },
     ],
   },

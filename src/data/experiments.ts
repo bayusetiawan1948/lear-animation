@@ -47,4 +47,18 @@ export const experiments: Experiment[] = [
     path: '/experiments/card-list-staggered',
     tags: ['Hover Effect', 'Topik-3'],
   },
+  {
+    id: 'easing-demo',
+    title: 'Easing Demo',
+    description: 'Demo untuk memahami berbagai jenis easing functions.',
+    path: '/experiments/easing-demo',
+    tags: ['Easing', 'Topik-4'],
+  },
+  {
+    id: 'animated-button',
+    title: 'Animated Button',
+    description: 'Demo untuk memahami animasi tombol interaktif.',
+    path: '/experiments/animated-button',
+    tags: ['Animation', 'Easing', 'Topik-4'],
+  },
 ];
