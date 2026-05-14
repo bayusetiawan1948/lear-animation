@@ -7,7 +7,8 @@ import { TiltCardExp } from './pages/experiments/TiltCardExp';
 import MagneticButtonExp from './pages/experiments/MagneticButtonExp';
 import CardListStaggeredExp from './pages/experiments/CardListStaggeredExp';
 import EasingDemoExp from './pages/experiments/EasingDemoExp';
-import AnimatedButtonExp from './pages/experiments/AnimatedButtonEXp';
+import AnimatedButtonExp from './pages/experiments/AnimatedButtonExp';
+import UpSideDownExp from './pages/experiments/UpSideDownExp';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: 'animated-button',
         element: <AnimatedButtonExp />,
+      },
+      {
+        path: 'upside-down',
+        element: <UpSideDownExp />,
       },
     ],
   },

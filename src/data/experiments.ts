@@ -61,4 +61,11 @@ export const experiments: Experiment[] = [
     path: '/experiments/animated-button',
     tags: ['Animation', 'Easing', 'Topik-4'],
   },
+  {
+    id: 'upside-down',
+    title: 'UpSideDown',
+    description: '',
+    path: '/experiments/upside-down',
+    tags: ['Practice'],
+  },
 ];
