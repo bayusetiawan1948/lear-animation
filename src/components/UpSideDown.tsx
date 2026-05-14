@@ -3,92 +3,99 @@ function UpSideDown() {
     <>
       <style>
         {`
-    @keyframes slideOut {
-  0% {
-    opacity: 0;
-    transform: translateY(var(--from-y));
-  }
+    @keyframes slideFromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
 
-  8% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  17% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    @keyframes slideToTop {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  25% {
-    opacity: 0;
-    transform: translateY(var(--to-y));
-  }
+      100% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+    }
 
-  100% {
-    opacity: 0;
-    transform: translateY(var(--to-y));
-  }
-}
+    @keyframes slideFromTop {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
 
-@keyframes slideStay {
-  0% {
-    opacity: 0;
-    transform: translateY(var(--from-y));
-  }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  8% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    @keyframes slideToBottom {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      100% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+    }
 
     .text-1-1,
     .text-1-2,
     .text-2-1,
     .text-2-2 {
       opacity: 0;
-      animation-duration: 4s;
-      animation-fill-mode: both;
+
+      animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-      animation-iteration-count: 1;
       will-change: transform, opacity;
     }
 
     .text-1-1 {
-      --from-y: 40px;
-      --to-y: -40px;
-      --op: 0;
-      animation-name: slideOut;
-      animation-delay: calc(0ms + (var(--index) * 40ms));
+      animation:
+        slideFromBottom 400ms forwards,
+        slideToTop 400ms forwards;
+
+      animation-delay:
+        calc(0ms + (var(--index) * 40ms)),
+        calc(2000ms + (var(--index) * 40ms));
     }
 
     .text-2-1 {
-      --from-y: -40px;
-      --to-y: 40px;
-      --op: 0;
-      animation-name: slideOut;
-      animation-delay: calc(800ms + (var(--index) * 40ms));
+      animation:
+        slideFromTop 400ms forwards,
+        slideToBottom 400ms forwards;
+
+      animation-delay:
+        calc(1000ms + (var(--index) * 40ms)),
+        calc(3000ms + (var(--index) * 40ms));
     }
 
     .text-1-2 {
-      --from-y: 40px;
-      --to-y: -40px;
-      --op: 1;
-      animation-name: slideStay;
-      animation-delay: calc(1600ms + (var(--index) * 40ms));
+      animation:
+        slideFromBottom 400ms forwards;
+
+      animation-delay:
+        calc(2000ms + (var(--index) * 40ms));
     }
 
     .text-2-2 {
-      --from-y: -40px;
-      --to-y: 40px;
-      --op: 1;
-      animation-name: slideStay;
-      animation-delay: calc(2400ms + (var(--index) * 40ms));
+      animation:
+        slideFromTop 400ms forwards;
+
+      animation-delay:
+        calc(3000ms + (var(--index) * 40ms));
     }
   `}
       </style>
